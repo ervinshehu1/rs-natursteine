@@ -1,0 +1,130 @@
+import { useState } from 'react';
+import carraraMarble from '@/assets/marble-carrara.jpg';
+import calacattaMarble from '@/assets/marble-calacatta.jpg';
+import neroMarble from '@/assets/marble-nero.jpg';
+import verdeMarble from '@/assets/marble-verde.jpg';
+import rosaMarble from '@/assets/marble-rosa.jpg';
+
+const collections = [
+  {
+    id: 1,
+    name: 'Carrara Classic',
+    description: 'The epitome of Italian elegance with distinctive grey veining',
+    image: carraraMarble,
+    origin: 'Carrara, Italy',
+    characteristics: 'Pure white background with subtle grey veining'
+  },
+  {
+    id: 2,
+    name: 'Calacatta Gold',
+    description: 'Dramatic golden veining on pristine white marble',
+    image: calacattaMarble,
+    origin: 'Tuscany, Italy',
+    characteristics: 'Bold gold and grey dramatic veining patterns'
+  },
+  {
+    id: 3,
+    name: 'Nero Marquina',
+    description: 'Sophisticated black marble with elegant white veining',
+    image: neroMarble,
+    origin: 'Markina, Spain',
+    characteristics: 'Deep black background with striking white veins'
+  },
+  {
+    id: 4,
+    name: 'Verde Guatemala',
+    description: 'Exotic green marble with natural artistic patterns',
+    image: verdeMarble,
+    origin: 'Guatemala',
+    characteristics: 'Rich green with white and gold natural patterns'
+  },
+  {
+    id: 5,
+    name: 'Rosa Portogallo',
+    description: 'Romantic pink marble with delicate veining',
+    image: rosaMarble,
+    origin: 'Portugal',
+    characteristics: 'Soft rose tones with subtle natural patterns'
+  }
+];
+
+const CollectionsSection = () => {
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+
+  return (
+    <section className="section-luxury bg-background">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h2 className="font-luxury text-5xl md:text-6xl font-bold text-primary mb-8">
+            Our Collections
+          </h2>
+          <div className="w-24 h-1 bg-gold-gradient mx-auto mb-8 rounded-full"></div>
+          <p className="font-body text-xl text-primary/70 max-w-3xl mx-auto leading-relaxed">
+            Each marble in our curated collection represents the pinnacle of natural beauty and geological artistry. 
+            Discover the unique character and story behind every stone.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          {collections.map((marble, index) => (
+            <div
+              key={marble.id}
+              className="group cursor-pointer animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
+              onMouseEnter={() => setHoveredId(marble.id)}
+              onMouseLeave={() => setHoveredId(null)}
+            >
+              <div className="card-marble overflow-hidden">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={marble.image}
+                    alt={`${marble.name} luxury marble`}
+                    className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div 
+                    className={`absolute inset-0 bg-primary/60 transition-opacity duration-300 ${
+                      hoveredId === marble.id ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center text-white p-6">
+                        <p className="font-body text-sm mb-2 uppercase tracking-wide">Origin</p>
+                        <p className="font-luxury text-lg mb-4">{marble.origin}</p>
+                        <p className="font-body text-sm">{marble.characteristics}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-8">
+                  <h3 className="font-luxury text-2xl font-semibold text-primary mb-4">
+                    {marble.name}
+                  </h3>
+                  <p className="font-body text-primary/70 leading-relaxed">
+                    {marble.description}
+                  </p>
+                  
+                  <div className="mt-6 flex items-center accent-gold font-medium font-body">
+                    <span className="mr-2">Explore Details</span>
+                    <svg 
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        hoveredId === marble.id ? 'translate-x-2' : ''
+                      }`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CollectionsSection;
