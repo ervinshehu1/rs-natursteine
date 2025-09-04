@@ -3,7 +3,6 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import CollectionsSection from '@/components/CollectionsSection';
 import WhyChooseSection from '@/components/WhyChooseSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
@@ -56,9 +55,6 @@ const Index = () => {
               <a href="#collections" className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">
                 Collections
               </a>
-              <a href="#testimonials" className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">
-                Testimonials
-              </a>
               <a href="#contact" className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">
                 Contact
               </a>
@@ -94,11 +90,6 @@ const Index = () => {
       {/* Why Choose Section */}
       <section id="why-choose">
         <WhyChooseSection />
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials">
-        <TestimonialsSection />
       </section>
 
       {/* Contact Section */}

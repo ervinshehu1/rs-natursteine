@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import carraraMarble from '@/assets/marble-carrara.jpg';
 import calacattaMarble from '@/assets/marble-calacatta.jpg';
 import neroMarble from '@/assets/marble-nero.jpg';
@@ -50,6 +51,7 @@ const collections = [
 
 const CollectionsSection = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const navigate = useNavigate(); 
 
   return (
     <section className="section-luxury bg-background">
@@ -103,24 +105,20 @@ const CollectionsSection = () => {
                   <p className="font-body text-primary/70 leading-relaxed">
                     {marble.description}
                   </p>
-                  
-                  <div className="mt-6 flex items-center accent-gold font-medium font-body">
-                    <span className="mr-2">Explore Details</span>
-                    <svg 
-                      className={`w-4 h-4 transition-transform duration-300 ${
-                        hoveredId === marble.id ? 'translate-x-2' : ''
-                      }`} 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="text-center mt-10">
+          <button
+            onClick={() => navigate('/collections')}
+            className="px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition duration-300"
+          >
+            View All Collections
+          </button>
         </div>
       </div>
     </section>
