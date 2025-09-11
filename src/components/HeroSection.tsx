@@ -28,8 +28,8 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <div className="animate-fade-in-up">
-          <h1 className="font-luxury text-6xl md:text-8xl lg:text-9xl font-bold text-primary mb-8 leading-tight">
-            LuxeMarble
+          <h1 className="font-luxury text-6xl md:text-8xl lg:text-7xl font-bold text-primary mb-8 leading-tight">
+            RAMA SHEHU NATURSTEINE
           </h1>
           <p className="font-luxury text-2xl md:text-4xl text-primary/80 mb-6 italic font-light">
             Crafted by Nature, Perfected by Excellence
@@ -40,12 +40,13 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="btn-luxury text-lg px-10 py-5">
+            <a href="/collections"><button className="btn-luxury text-lg px-10 py-5">
               Explore Collections
             </button>
-            <button className="btn-marble text-lg px-10 py-5">
+            </a>
+            {/* <button className="btn-marble text-lg px-10 py-5">
               Learn Our Story
-            </button>
+            </button> */}
           </div>
         </div>
         

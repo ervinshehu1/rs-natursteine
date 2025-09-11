@@ -18,10 +18,10 @@ const ContactSection = () => {
 
     try {
       await emailjs.sendForm(
-        "service_bbce7gj", 
-        "template_s4zmnde", 
+        "service_bbce7gj",
+        "template_s4zmnde",
         formRef.current,
-        "u7ScdEJVAT4r-QRBD" 
+        "u7ScdEJVAT4r-QRBD"
       );
 
       setSubmitStatus("success");
@@ -48,21 +48,63 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          <div className="animate-fade-in-up">
-            <div className="card-marble p-8">
-              <h3 className="font-luxury text-3xl font-bold text-primary mb-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+          {/* Get In Touch Card */}
+          <div className="animate-fade-in-up flex">
+            <div className="card-marble p-8 space-y-6 flex flex-col w-full">
+              <h3 className="font-luxury text-3xl font-bold text-primary mb-6">
                 Get In Touch
               </h3>
+
+              {/* Address */}
+              <div>
+                <h4 className="font-luxury text-xl font-semibold text-primary mb-2">
+                  Address
+                </h4>
+                <p className="font-body text-primary/70 leading-relaxed">
+                  1234 Marble Avenue, Luxury District, NY 10001
+                </p>
+              </div>
+
+              {/* Phone */}
+              <div>
+                <h4 className="font-luxury text-xl font-semibold text-primary mb-2">
+                  Phone
+                </h4>
+                <p className="font-body text-primary/70 leading-relaxed">
+                  +1 (555) 123-4567
+                </p>
+              </div>
+
+              {/* Email */}
+              <div>
+                <h4 className="font-luxury text-xl font-semibold text-primary mb-2">
+                  Email
+                </h4>
+                <p className="font-body text-primary/70 leading-relaxed">
+                  info@luxemarble.com
+                </p>
+              </div>
+
+              {/* Hours */}
+              <div>
+                <h4 className="font-luxury text-xl font-semibold text-primary mb-2">
+                  Hours
+                </h4>
+                <p className="font-body text-primary/70 leading-relaxed">
+                  Mon - Fri: 9:00 AM - 6:00 PM <br />
+                  Sat: 10:00 AM - 4:00 PM
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Contact Form */}
           <div
-            className="animate-fade-in-up"
+            className="animate-fade-in-up flex"
             style={{ animationDelay: "0.3s" }}
           >
-            <div className="card-marble p-8">
+            <div className="card-marble p-8 flex flex-col w-full">
               <h3 className="font-luxury text-3xl font-bold text-primary mb-8">
                 Send us a Message
               </h3>
@@ -70,8 +112,8 @@ const ContactSection = () => {
               {submitStatus === "success" && (
                 <div className="mb-6 p-4 bg-luxury-gold/10 border border-luxury-gold/20 rounded-xl">
                   <p className="font-body text-luxury-gold-dark">
-                    Thank you for your message! We'll get back to you within
-                    24 hours.
+                    Thank you for your message! We'll get back to you within 24
+                    hours.
                   </p>
                 </div>
               )}
@@ -79,13 +121,16 @@ const ContactSection = () => {
               {submitStatus === "error" && (
                 <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-xl">
                   <p className="font-body text-destructive">
-                    There was an error sending your message. Please try
-                    again.
+                    There was an error sending your message. Please try again.
                   </p>
                 </div>
               )}
 
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="space-y-6 flex-1"
+              >
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label

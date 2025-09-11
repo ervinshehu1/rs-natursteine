@@ -31,22 +31,6 @@ const collections = [
     origin: 'Markina, Spain',
     characteristics: 'Deep black background with striking white veins'
   },
-  {
-    id: 4,
-    name: 'Verde Guatemala',
-    description: 'Exotic green marble with natural artistic patterns',
-    image: verdeMarble,
-    origin: 'Guatemala',
-    characteristics: 'Rich green with white and gold natural patterns'
-  },
-  {
-    id: 5,
-    name: 'Rosa Portogallo',
-    description: 'Romantic pink marble with delicate veining',
-    image: rosaMarble,
-    origin: 'Portugal',
-    characteristics: 'Soft rose tones with subtle natural patterns'
-  }
 ];
 
 const CollectionsSection = () => {
