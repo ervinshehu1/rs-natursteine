@@ -1,34 +1,33 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import carraraMarble from '@/assets/marble-carrara.jpg';
-import calacattaMarble from '@/assets/marble-calacatta.jpg';
-import neroMarble from '@/assets/marble-nero.jpg';
-import verdeMarble from '@/assets/marble-verde.jpg';
-import rosaMarble from '@/assets/marble-rosa.jpg';
+import egypt1 from '../assets/Egypt/image (4).png';
+import egypt2 from '../assets/Egypt/image (5).png';
+import egypt3 from '../assets/Egypt/image (7).png';
+
 
 const collections = [
   {
     id: 1,
     name: 'Carrara Classic',
     description: 'The epitome of Italian elegance with distinctive grey veining',
-    image: carraraMarble,
-    origin: 'Carrara, Italy',
+    image: egypt1,
+    origin: 'Indien',
     characteristics: 'Pure white background with subtle grey veining'
   },
   {
     id: 2,
     name: 'Calacatta Gold',
     description: 'Dramatic golden veining on pristine white marble',
-    image: calacattaMarble,
-    origin: 'Tuscany, Italy',
+    image: egypt2,
+    origin: 'Indien',
     characteristics: 'Bold gold and grey dramatic veining patterns'
   },
   {
     id: 3,
     name: 'Nero Marquina',
     description: 'Sophisticated black marble with elegant white veining',
-    image: neroMarble,
-    origin: 'Markina, Spain',
+    image: egypt3,
+    origin: 'Indien',
     characteristics: 'Deep black background with striking white veins'
   },
 ];
@@ -42,12 +41,11 @@ const CollectionsSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20 animate-fade-in-up">
           <h2 className="font-luxury text-5xl md:text-6xl font-bold text-primary mb-8">
-            Our Collections
+            Bildergalerie
           </h2>
           <div className="w-24 h-1 bg-gold-gradient mx-auto mb-8 rounded-full"></div>
           <p className="font-body text-xl text-primary/70 max-w-3xl mx-auto leading-relaxed">
-            Each marble in our curated collection represents the pinnacle of natural beauty and geological artistry. 
-            Discover the unique character and story behind every stone.
+            Inspiration für Ihre nächsten Projekte
           </p>
         </div>
 
@@ -101,7 +99,7 @@ const CollectionsSection = () => {
             onClick={() => navigate('/collections')}
             className="px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition duration-300"
           >
-            View All Collections
+            Kollektionen ansehen
           </button>
         </div>
       </div>

@@ -32,16 +32,15 @@ const HeroSection = () => {
             RAMA SHEHU NATURSTEINE
           </h1>
           <p className="font-luxury text-2xl md:text-4xl text-primary/80 mb-6 italic font-light">
-            Crafted by Nature, Perfected by Excellence
+            Stein für Stein
           </p>
           <p className="font-body text-lg md:text-xl text-primary/70 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Discover the world's finest marble collections. Each piece tells a story of geological artistry, 
-            refined through millions of years and perfected by master craftsmen.
+            Qualität aus der Natur.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a href="/collections"><button className="btn-luxury text-lg px-10 py-5">
-              Explore Collections
+              Entdecke unsere Kollektionen
             </button>
             </a>
             {/* <button className="btn-marble text-lg px-10 py-5">

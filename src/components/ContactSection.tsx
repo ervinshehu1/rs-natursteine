@@ -5,9 +5,7 @@ const ContactSection = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,178 +34,115 @@ const ContactSection = () => {
 
   return (
     <section className="section-luxury bg-surface marble-texture">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <div className="text-center mb-20 animate-fade-in-up">
           <h2 className="font-luxury text-5xl md:text-6xl font-bold text-primary mb-8">
-            Contact Us
+            Kontaktieren Sie uns
           </h2>
           <div className="w-24 h-1 bg-gold-gradient mx-auto mb-8 rounded-full"></div>
-          <p className="font-body text-xl text-primary/70 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your space with the world's finest marble? Let's
-            discuss how we can bring your vision to life.
+          <p className="font-body text-xl text-primary/70 leading-relaxed">
+            Wir freuen uns auf Ihre Nachricht!
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-stretch">
-          {/* Get In Touch Card */}
-          <div className="animate-fade-in-up flex">
-            <div className="card-marble p-8 space-y-6 flex flex-col w-full">
-              <h3 className="font-luxury text-3xl font-bold text-primary mb-6">
-                Get In Touch
-              </h3>
-
-              {/* Address */}
-              <div>
-                <h4 className="font-luxury text-xl font-semibold text-primary mb-2">
-                  Address
-                </h4>
-                <p className="font-body text-primary/70 leading-relaxed">
-                  1234 Marble Avenue, Luxury District, NY 10001
+        {/* Contact Form */}
+        <div className="animate-fade-in-up">
+          <div className="card-marble p-8 flex flex-col w-full mx-auto">
+            {submitStatus === "success" && (
+              <div className="mb-6 p-4 bg-luxury-gold/10 border border-luxury-gold/20 rounded-xl">
+                <p className="font-body text-luxury-gold-dark">
+                  Vielen Dank für Ihre Nachricht. Wir werden Ihnen innerhalb von 24 Stunden antworten.
                 </p>
               </div>
+            )}
 
-              {/* Phone */}
-              <div>
-                <h4 className="font-luxury text-xl font-semibold text-primary mb-2">
-                  Phone
-                </h4>
-                <p className="font-body text-primary/70 leading-relaxed">
-                  +1 (555) 123-4567
+            {submitStatus === "error" && (
+              <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-xl">
+                <p className="font-body text-destructive">
+                  Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.
                 </p>
               </div>
+            )}
 
-              {/* Email */}
-              <div>
-                <h4 className="font-luxury text-xl font-semibold text-primary mb-2">
-                  Email
-                </h4>
-                <p className="font-body text-primary/70 leading-relaxed">
-                  info@luxemarble.com
-                </p>
-              </div>
-
-              {/* Hours */}
-              <div>
-                <h4 className="font-luxury text-xl font-semibold text-primary mb-2">
-                  Hours
-                </h4>
-                <p className="font-body text-primary/70 leading-relaxed">
-                  Mon - Fri: 9:00 AM - 6:00 PM <br />
-                  Sat: 10:00 AM - 4:00 PM
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div
-            className="animate-fade-in-up flex"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <div className="card-marble p-8 flex flex-col w-full">
-              <h3 className="font-luxury text-3xl font-bold text-primary mb-8">
-                Send us a Message
-              </h3>
-
-              {submitStatus === "success" && (
-                <div className="mb-6 p-4 bg-luxury-gold/10 border border-luxury-gold/20 rounded-xl">
-                  <p className="font-body text-luxury-gold-dark">
-                    Thank you for your message! We'll get back to you within 24
-                    hours.
-                  </p>
-                </div>
-              )}
-
-              {submitStatus === "error" && (
-                <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-xl">
-                  <p className="font-body text-destructive">
-                    There was an error sending your message. Please try again.
-                  </p>
-                </div>
-              )}
-
-              <form
-                ref={formRef}
-                onSubmit={handleSubmit}
-                className="space-y-6 flex-1"
-              >
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block font-body text-primary/80 mb-2"
-                    >
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full px-4 py-3 border border-primary/20 rounded-xl focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/20 transition-all duration-300 bg-white/50 backdrop-blur-sm"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block font-body text-primary/80 mb-2"
-                    >
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 border border-primary/20 rounded-xl focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/20 transition-all duration-300 bg-white/50 backdrop-blur-sm"
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                </div>
-
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 flex-1">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    htmlFor="company"
-                    className="block font-body text-primary/80 mb-2"
-                  >
-                    Company/Organization
+                  <label htmlFor="name" className="block font-body text-primary/80 mb-2">
+                    Name, Vorname *
                   </label>
                   <input
                     type="text"
-                    id="company"
-                    name="company"
-                    className="w-full px-4 py-3 border border-primary/20 rounded-xl focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/20 transition-all duration-300 bg-white/50 backdrop-blur-sm"
-                    placeholder="Enter your company name"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block font-body text-primary/80 mb-2"
-                  >
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
+                    id="name"
+                    name="name"
                     required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-primary/20 rounded-xl focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/20 transition-all duration-300 resize-vertical bg-white/50 backdrop-blur-sm"
-                    placeholder="Tell us about your project..."
+                    className="w-full px-4 py-3 border border-primary/20 rounded-xl focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/20 transition-all duration-300 bg-white/50 backdrop-blur-sm"
+                    placeholder="Geben Sie Ihren vollständigen Namen ein"
                   />
                 </div>
+                <div>
+                  <label htmlFor="email" className="block font-body text-primary/80 mb-2">
+                    E-Mail Adresse *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 border border-primary/20 rounded-xl focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/20 transition-all duration-300 bg-white/50 backdrop-blur-sm"
+                    placeholder="Geben Sie Ihre E-Mail Adresse ein"
+                  />
+                </div>
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn-luxury w-full text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "Sending Message..." : "Send Message"}
-                </button>
-              </form>
-            </div>
+              <div>
+                <label htmlFor="phone" className="block font-body text-primary/80 mb-2">
+                  Telefonnummer
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="[0-9+\-\s]{7,15}"
+                  className="w-full px-4 py-3 border border-primary/20 rounded-xl focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/20 transition-all duration-300 bg-white/50 backdrop-blur-sm"
+                  placeholder="Geben Sie Ihre Telefonnummer ein"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="company" className="block font-body text-primary/80 mb-2">
+                  Firma
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  className="w-full px-4 py-3 border border-primary/20 rounded-xl focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/20 transition-all duration-300 bg-white/50 backdrop-blur-sm"
+                  placeholder="Geben Sie Ihren Firmennamen ein"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block font-body text-primary/80 mb-2">
+                  Nachricht *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 border border-primary/20 rounded-xl focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/20 transition-all duration-300 resize-vertical bg-white/50 backdrop-blur-sm"
+                  placeholder="Bitte verfassen Sie hier Ihre Nachricht..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="btn-luxury w-full text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Nachricht wird gesendet..." : "Nachricht senden"}
+              </button>
+            </form>
           </div>
         </div>
       </div>

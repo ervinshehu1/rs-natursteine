@@ -6,28 +6,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: 'Unmatched Quality',
-    description: 'Each marble slab undergoes rigorous quality inspection, ensuring only the finest stones reach our clients. Our master craftsmen have decades of experience in selecting premium materials.'
-  },
-  {
-    id: 2,
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9" />
-      </svg>
-    ),
-    title: 'Sustainable Sourcing',
-    description: 'We partner exclusively with quarries that follow sustainable extraction practices, ensuring minimal environmental impact while preserving natural beauty for future generations.'
-  },
-  {
-    id: 3,
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    title: 'Artisan Craftsmanship',
-    description: 'Our team of master artisans brings centuries of stone-working tradition to every project, combining time-honored techniques with modern precision tools.'
+    title: 'Höchste Qualität',
+    description: 'Rama Shehu Natursteine garantiert höchste Qualität -  sorgfältig ausgewählte Natursteine, die durch Langlebigkeit, natürliche Schönheit und Robustheit überzeugen.'
   },
   {
     id: 4,
@@ -36,8 +16,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    title: 'Exclusive Collections',
-    description: 'Access to rare and exclusive marble varieties sourced from private quarries worldwide, offering unique pieces that cannot be found elsewhere in the market.'
+    title: 'Einzigartige internationale Auswahl',
+    description: 'Rama Shehu Natursteine bieten Ihnen eine vielfältige und exklusive Auswahl an Granit- und Quarzitsteinen aus aller Welt – Qualität und Vielfalt, die Sie so nicht überall finden. Dank unserer direkten Kontakte zu Steinbrüchen in Indien und anderen Ländern können wir Ihnen einzigartige Natursteine anbieten, die nicht jeder Händler im Sortiment hat. So finden Sie bei uns genau den besonderen Stein, der Ihr Projekt unverwechselbar macht.'
   }
 ];
 
@@ -47,12 +27,11 @@ const WhyChooseSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20 animate-fade-in-up">
           <h2 className="font-luxury text-5xl md:text-6xl font-bold text-primary mb-8">
-            Why Choose LuxeMarble
+            Warum Rama Shehu Natursteine Ihre beste Auswahl ist
           </h2>
           <div className="w-24 h-1 bg-gold-gradient mx-auto mb-8 rounded-full"></div>
           <p className="font-body text-xl text-primary/70 max-w-3xl mx-auto leading-relaxed">
-            Our commitment to excellence sets us apart in the world of luxury natural stone. 
-            Experience the difference that three decades of expertise makes.
+            Bei Rama Shehu Natursteine setzen wir auf höchste Qualität, natürliche Schönheit – damit Ihr Projekt mit unseren sorgfältig ausgewählten Natursteinen nicht nur langlebig, sondern auch einzigartig wird.
           </p>
         </div>
 
