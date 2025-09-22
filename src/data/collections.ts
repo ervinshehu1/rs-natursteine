@@ -28,6 +28,14 @@ import india27 from "../assets/India/PHOTO-27.jpg";
 import india28 from "../assets/India/PHOTO-28.jpg";
 import india29 from "../assets/India/PHOTO-29.jpg";
 import india30 from "../assets/India/PHOTO-30.jpg";
+import india31 from "../assets/India/foto.png"
+import india32 from "../assets/India/foto-1.png"
+import india33 from "../assets/India/foto-2.png"
+import india34 from "../assets/India/foto-3.png"
+import india35 from "../assets/India/foto-4.png"
+import india36 from "../assets/India/foto-5.png"
+import india37 from "../assets/India/foto-6.png"
+import india38 from "../assets/India/foto-7.png"
 import egypt1 from "../assets/Egypt/image (1).png";
 import egypt2 from "../assets/Egypt/image (2).png";
 import egypt3 from "../assets/Egypt/image (3).png";
@@ -38,6 +46,54 @@ import egypt7 from "../assets/Egypt/image (7).png";
 import egypt8 from "../assets/Egypt/image.png";
 
 const collections = [
+  {
+    id: 39,
+    name: "Imperial Red",
+    image: india31,
+    origin: "Indien",
+  },
+  {
+    id: 40,
+    name: "Paradisso Classic",
+    image: india32,
+    origin: "Indien",
+  },
+  {
+    id: 41,
+    name: "Hymala",
+    image: india33,
+    origin: "Indien",
+  },
+  {
+    id: 42,
+    name: "Juparana",
+    image: india34,
+    origin: "Indien",
+  },
+  {
+    id: 43,
+    name: "Red multicolor",
+    image: india35,
+    origin: "Indien",
+  },
+  {
+    id: 44,
+    name: "Bham Gold",
+    image: india36,
+    origin: "Indien",
+  },
+  {
+    id: 45,
+    name: "Waranga Black",
+    image: india37,
+    origin: "Indien",
+  },
+  {
+    id: 46,
+    name: "Wiscont white",
+    image: india38,
+    origin: "Indien",
+  },
   {
     id: 1,
     name: "Quarzit",

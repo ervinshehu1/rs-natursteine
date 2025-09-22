@@ -1,34 +1,28 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import egypt1 from '../assets/Egypt/image (4).png';
-import egypt2 from '../assets/Egypt/image (5).png';
-import egypt3 from '../assets/Egypt/image (7).png';
+import india31 from "../assets/India/foto.png"
+import india32 from "../assets/India/foto-1.png"
+import india33 from "../assets/India/foto-2.png"
 
 
 const collections = [
   {
     id: 1,
-    name: 'Carrara Classic',
-    description: 'The epitome of Italian elegance with distinctive grey veining',
-    image: egypt1,
+    name: 'Imperial Red',
+    image: india31,
     origin: 'Indien',
-    characteristics: 'Pure white background with subtle grey veining'
   },
   {
     id: 2,
-    name: 'Calacatta Gold',
-    description: 'Dramatic golden veining on pristine white marble',
-    image: egypt2,
+    name: 'Paradisso Classic',
+    image: india32,
     origin: 'Indien',
-    characteristics: 'Bold gold and grey dramatic veining patterns'
   },
   {
     id: 3,
-    name: 'Nero Marquina',
-    description: 'Sophisticated black marble with elegant white veining',
-    image: egypt3,
+    name: 'Hymala',
+    image: india33,
     origin: 'Indien',
-    characteristics: 'Deep black background with striking white veins'
   },
 ];
 
@@ -74,7 +68,6 @@ const CollectionsSection = () => {
                       <div className="text-center text-white p-6">
                         <p className="font-body text-sm mb-2 uppercase tracking-wide">Origin</p>
                         <p className="font-luxury text-lg mb-4">{marble.origin}</p>
-                        <p className="font-body text-sm">{marble.characteristics}</p>
                       </div>
                     </div>
                   </div>
@@ -84,9 +77,6 @@ const CollectionsSection = () => {
                   <h3 className="font-luxury text-2xl font-semibold text-primary mb-4">
                     {marble.name}
                   </h3>
-                  <p className="font-body text-primary/70 leading-relaxed">
-                    {marble.description}
-                  </p>
                 </div>
               </div>
             </div>
