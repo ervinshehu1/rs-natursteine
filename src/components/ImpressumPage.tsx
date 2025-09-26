@@ -1,64 +1,37 @@
 // src/pages/ImpressumPage.tsx
-import React, { useState, useEffect, useRef } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import logo from "@/assets/Logo.png";
-import Scrollbar from "smooth-scrollbar";
 
 const ImpressumPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const scrollbarRef = useRef<any>(null);
+  const navigate = useNavigate();
 
-  // Initialize smooth scrollbar
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    scrollbarRef.current = Scrollbar.init(containerRef.current, {
-      damping: 0.08,
-      continuousScrolling: true,
-      alwaysShowTracks: true,
-    });
-
-    return () => {
-      scrollbarRef.current?.destroy();
-      scrollbarRef.current = null;
-    };
-  }, []);
-
-  const handleAnchorClick = (id: string) => {
-    const el = document.getElementById(id);
-    if (el && scrollbarRef.current && containerRef.current) {
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const elRect = el.getBoundingClientRect();
-      const navHeight = 64; // adjust if your nav height is different
-      const top = scrollbarRef.current.offset.y + (elRect.top - containerRect.top) - navHeight;
-      scrollbarRef.current.scrollTo(0, top, 600);
-    }
-    setMobileMenuOpen(false);
+  const handleNavigation = (section: string) => {
+    navigate("/", { state: { scrollTo: section } });
   };
 
   return (
-    <div
-      ref={containerRef}
-      id="smooth-scroll"
-      className="bg-surface marble-texture flex flex-col min-h-screen"
-      style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, overflow: "hidden" }}
-    >
+    <div className="bg-surface marble-texture flex flex-col min-h-screen">
       <div style={{ paddingTop: "64px" }}> {/* offset for nav */}
         {/* ===== Navbar ===== */}
         <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-primary/10">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex items-center justify-between h-16">
-              <RouterLink to="/" className="flex items-center" onClick={() => scrollbarRef.current?.scrollTo(0, 0, 600)}>
-                <img src={logo} alt="Rama Shehu Natursteine Logo" className="h-12 md:h-16 lg:h-28 w-auto object-contain" />
+              <RouterLink to="/" className="flex items-center">
+                <img
+                  src={logo}
+                  alt="Rama Shehu Natursteine Logo"
+                  className="h-16 md:h-16 lg:h-28 w-auto object-contain"
+                />
               </RouterLink>
 
               {/* Desktop menu */}
               <div className="hidden md:flex items-center space-x-8">
-                <button onClick={() => handleAnchorClick("hero")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Willkommen</button>
-                <button onClick={() => handleAnchorClick("about")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Über uns</button>
-                <button onClick={() => handleAnchorClick("collections")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Bildergalerie</button>
-                <button onClick={() => handleAnchorClick("contact")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Kontakt</button>
+                <button onClick={() => handleNavigation("hero")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Willkommen</button>
+                <button onClick={() => handleNavigation("about")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Über uns</button>
+                <button onClick={() => handleNavigation("collections")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Bildergalerie</button>
+                <button onClick={() => handleNavigation("contact")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Kontakt</button>
               </div>
 
               {/* Mobile burger */}
@@ -74,10 +47,10 @@ const ImpressumPage = () => {
             {/* Mobile menu dropdown */}
             {mobileMenuOpen && (
               <div className="md:hidden mt-2 space-y-2 pb-4 px-4 bg-white/90 backdrop-blur-sm border-t border-primary/10">
-                <button onClick={() => handleAnchorClick("hero")} className="block font-body text-primary hover:text-luxury-gold transition-colors duration-300">Willkommen</button>
-                <button onClick={() => handleAnchorClick("about")} className="block font-body text-primary hover:text-luxury-gold transition-colors duration-300">Über uns</button>
-                <button onClick={() => handleAnchorClick("collections")} className="block font-body text-primary hover:text-luxury-gold transition-colors duration-300">Bildergalerie</button>
-                <button onClick={() => handleAnchorClick("contact")} className="block font-body text-primary hover:text-luxury-gold transition-colors duration-300">Kontakt</button>
+                <button onClick={() => { handleNavigation("hero"); setMobileMenuOpen(false); }} className="block font-body text-primary hover:text-luxury-gold">Willkommen</button>
+                <button onClick={() => { handleNavigation("about"); setMobileMenuOpen(false); }} className="block font-body text-primary hover:text-luxury-gold">Über uns</button>
+                <button onClick={() => { handleNavigation("collections"); setMobileMenuOpen(false); }} className="block font-body text-primary hover:text-luxury-gold">Bildergalerie</button>
+                <button onClick={() => { handleNavigation("contact"); setMobileMenuOpen(false); }} className="block font-body text-primary hover:text-luxury-gold">Kontakt</button>
               </div>
             )}
           </div>
@@ -123,10 +96,10 @@ const ImpressumPage = () => {
               <div>
                 <h3 className="font-luxury text-xl font-semibold mb-4 text-luxury-gold">Schnellzugriffe</h3>
                 <ul className="space-y-2 font-body">
-                  <li><button onClick={() => handleAnchorClick("about")}>Über uns</button></li>
-                  <li><button onClick={() => handleAnchorClick("collections")}>Bildergalerie</button></li>
-                  <li><button onClick={() => handleAnchorClick("why-choose")}>Warum wir</button></li>
-                  <li><button onClick={() => handleAnchorClick("contact")}>Kontakt</button></li>
+                  <li><button onClick={() => handleNavigation("about")}>Über uns</button></li>
+                  <li><button onClick={() => handleNavigation("collections")}>Bildergalerie</button></li>
+                  <li><button onClick={() => handleNavigation("why-choose")}>Warum wir</button></li>
+                  <li><button onClick={() => handleNavigation("contact")}>Kontakt</button></li>
                 </ul>
               </div>
               <div>

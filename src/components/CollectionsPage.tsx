@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import collectionsData from "@/data/collections";
 import logo from "@/assets/Logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Scrollbar from "smooth-scrollbar";
 
 const CollectionsPage = () => {
@@ -10,6 +10,7 @@ const CollectionsPage = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const scrollbarRef = useRef<any>(null);
+  const navigate = useNavigate();
 
   // ✅ Initialize smooth-scrollbar when component mounts
   useEffect(() => {
@@ -27,6 +28,34 @@ const CollectionsPage = () => {
       scrollbarRef.current = null;
     };
   }, []);
+
+  // ✅ Smooth scroll to sections
+  const handleScrollTo = (id: string) => {
+    const doScroll = () => {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          const navHeight = 64;
+          const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+
+          if (scrollbarRef.current) {
+            scrollbarRef.current.scrollTo(0, top, 800); // smooth-scrollbar scroll
+          } else {
+            window.scrollTo({ top, behavior: "smooth" }); // fallback
+          }
+        }
+      }, 100);
+    };
+
+    if (window.location.pathname !== "/") {
+      navigate("/", { replace: false });
+      setTimeout(doScroll, 200); // wait for page render
+    } else {
+      doScroll();
+    }
+
+    setMobileMenuOpen(false);
+  };
 
   // ✅ Filter collections efficiently
   const filteredCollections = useMemo(() => {
@@ -50,16 +79,16 @@ const CollectionsPage = () => {
               <img
                 src={logo}
                 alt="Rama Shehu Natursteine Logo"
-                className="h-12 md:h-16 lg:h-28 w-auto object-contain"
+                className="h-16 md:h-16 lg:h-28 w-auto object-contain"
               />
             </Link>
 
             {/* Desktop menu */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#hero" className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Willkommen</a>
-              <a href="#about" className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Über uns</a>
-              <a href="#collections" className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Bildergalerie</a>
-              <a href="#contact" className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Kontakt</a>
+              <button onClick={() => handleScrollTo("hero")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Willkommen</button>
+              <button onClick={() => handleScrollTo("about")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Über uns</button>
+              <button onClick={() => handleScrollTo("collections")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Bildergalerie</button>
+              <button onClick={() => handleScrollTo("contact")} className="font-body text-primary hover:text-luxury-gold transition-colors duration-300">Kontakt</button>
             </div>
 
             {/* Mobile burger */}
@@ -76,10 +105,10 @@ const CollectionsPage = () => {
           {/* Mobile menu dropdown */}
           {mobileMenuOpen && (
             <div className="md:hidden mt-2 space-y-2 pb-4 px-4 bg-white/90 backdrop-blur-sm border-t border-primary/10">
-              <a href="#hero" className="block font-body text-primary hover:text-luxury-gold" onClick={() => setMobileMenuOpen(false)}>Willkommen</a>
-              <a href="#about" className="block font-body text-primary hover:text-luxury-gold" onClick={() => setMobileMenuOpen(false)}>Über uns</a>
-              <a href="#collections" className="block font-body text-primary hover:text-luxury-gold" onClick={() => setMobileMenuOpen(false)}>Bildergalerie</a>
-              <a href="#contact" className="block font-body text-primary hover:text-luxury-gold" onClick={() => setMobileMenuOpen(false)}>Kontakt</a>
+              <button onClick={() => handleScrollTo("hero")} className="block font-body text-primary hover:text-luxury-gold">Willkommen</button>
+              <button onClick={() => handleScrollTo("about")} className="block font-body text-primary hover:text-luxury-gold">Über uns</button>
+              <button onClick={() => handleScrollTo("collections")} className="block font-body text-primary hover:text-luxury-gold">Bildergalerie</button>
+              <button onClick={() => handleScrollTo("contact")} className="block font-body text-primary hover:text-luxury-gold">Kontakt</button>
             </div>
           )}
         </div>
@@ -159,10 +188,10 @@ const CollectionsPage = () => {
             <div>
               <h3 className="font-luxury text-xl font-semibold mb-4 text-luxury-gold">Schnellzugriffe</h3>
               <ul className="space-y-2 font-body">
-                <li><a href="#about" className="text-primary-foreground/80 hover:text-luxury-gold transition-colors">Über uns</a></li>
-                <li><a href="#collections" className="text-primary-foreground/80 hover:text-luxury-gold transition-colors">Bildergalerie</a></li>
-                <li><a href="#why-choose" className="text-primary-foreground/80 hover:text-luxury-gold transition-colors">Warum wir</a></li>
-                <li><a href="#contact" className="text-primary-foreground/80 hover:text-luxury-gold transition-colors">Kontakt</a></li>
+                <li><button onClick={() => handleScrollTo("about")} className="text-primary-foreground/80 hover:text-luxury-gold transition-colors">Über uns</button></li>
+                <li><button onClick={() => handleScrollTo("collections")} className="text-primary-foreground/80 hover:text-luxury-gold transition-colors">Bildergalerie</button></li>
+                <li><button onClick={() => handleScrollTo("why-choose")} className="text-primary-foreground/80 hover:text-luxury-gold transition-colors">Warum wir</button></li>
+                <li><button onClick={() => handleScrollTo("contact")} className="text-primary-foreground/80 hover:text-luxury-gold transition-colors">Kontakt</button></li>
               </ul>
             </div>
             <div>

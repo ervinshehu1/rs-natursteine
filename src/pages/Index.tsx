@@ -69,7 +69,7 @@ const Index = () => {
                 <img
                   src={logo}
                   alt="Rama Shehu Natursteine Logo"
-                  className="h-12 md:h-16 lg:h-28 w-auto object-contain"
+                  className="h-16 md:h-16 lg:h-28 w-auto object-contain"
                 />
               </Link>
 

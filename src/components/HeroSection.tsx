@@ -31,19 +31,19 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <div className="animate-fade-in-up">
-          <h1 className="font-luxury text-6xl md:text-8xl lg:text-7xl font-bold text-primary mb-8 leading-tight">
+          <h1 className="font-luxury text-5xl md:text-8xl lg:text-7xl font-bold text-primary mb-8 leading-tight">
             RAMA SHEHU NATURSTEINE
           </h1>
-          <p className="font-luxury text-2xl md:text-4xl text-primary/80 mb-6 italic font-light">
+          <p className="font-luxury text-xl md:text-4xl text-primary/80 mb-6 italic font-light">
             Stein für Stein
           </p>
-          <p className="font-body text-lg md:text-xl text-primary/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-body text-md md:text-xl text-primary/70 mb-12 max-w-2xl mx-auto leading-relaxed">
             Qualität aus der Natur.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link to="/collections">
-              <button className="btn-luxury text-lg px-10 py-5">
+              <button className="btn-luxury text-md px-10 py-5 lg:text-lg">
                 Entdecke unsere Kollektionen
               </button>
             </Link>

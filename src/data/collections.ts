@@ -1,49 +1,49 @@
-import india1 from "../assets/India/PHOTO-1.jpg";
-import india2 from "../assets/India/PHOTO-2.jpg";
-import india3 from "../assets/India/PHOTO-3.jpg";
-import india4 from "../assets/India/PHOTO-4.jpg";
-import india5 from "../assets/India/PHOTO-5.jpg";
-import india6 from "../assets/India/PHOTO-6.jpg";
-import india7 from "../assets/India/PHOTO-7.jpg";
-import india8 from "../assets/India/PHOTO-8.jpg";
-import india9 from "../assets/India/PHOTO-9.jpg";
-import india10 from "../assets/India/PHOTO-10.jpg";
-import india11 from "../assets/India/PHOTO-11.jpg";
-import india12 from "../assets/India/PHOTO-12.jpg";
-import india13 from "../assets/India/PHOTO-13.jpg";
-import india14 from "../assets/India/PHOTO-14.jpg";
-import india15 from "../assets/India/PHOTO-15.jpg";
-import india16 from "../assets/India/PHOTO-16.jpg";
-import india17 from "../assets/India/PHOTO-17.jpg";
-import india18 from "../assets/India/PHOTO-18.jpg";
-import india19 from "../assets/India/PHOTO-19.jpg";
-import india20 from "../assets/India/PHOTO-20.jpg";
-import india21 from "../assets/India/PHOTO-21.jpg";
-import india22 from "../assets/India/PHOTO-22.jpg";
-import india23 from "../assets/India/PHOTO-23.jpg";
-import india24 from "../assets/India/PHOTO-24.jpg";
-import india25 from "../assets/India/PHOTO-25.jpg";
-import india26 from "../assets/India/PHOTO-26.jpg";
-import india27 from "../assets/India/PHOTO-27.jpg";
-import india28 from "../assets/India/PHOTO-28.jpg";
-import india29 from "../assets/India/PHOTO-29.jpg";
-import india30 from "../assets/India/PHOTO-30.jpg";
-import india31 from "../assets/India/foto.png"
-import india32 from "../assets/India/foto-1.png"
-import india33 from "../assets/India/foto-2.png"
-import india34 from "../assets/India/foto-3.png"
-import india35 from "../assets/India/foto-4.png"
-import india36 from "../assets/India/foto-5.png"
-import india37 from "../assets/India/foto-6.png"
-import india38 from "../assets/India/foto-7.png"
-import egypt1 from "../assets/Egypt/image (1).png";
-import egypt2 from "../assets/Egypt/image (2).png";
-import egypt3 from "../assets/Egypt/image (3).png";
-import egypt4 from "../assets/Egypt/image (4).png";
-import egypt5 from "../assets/Egypt/image (5).png";
-import egypt6 from "../assets/Egypt/image (6).png";
-import egypt7 from "../assets/Egypt/image (7).png";
-import egypt8 from "../assets/Egypt/image.png";
+import india1 from "../assets/India/PHOTO-1.webp";
+import india2 from "../assets/India/PHOTO-2.webp";
+import india3 from "../assets/India/PHOTO-3.webp";
+import india4 from "../assets/India/PHOTO-4.webp";
+import india5 from "../assets/India/PHOTO-5.webp";
+import india6 from "../assets/India/PHOTO-6.webp";
+import india7 from "../assets/India/PHOTO-7.webp";
+import india8 from "../assets/India/PHOTO-8.webp";
+import india9 from "../assets/India/PHOTO-9.webp";
+import india10 from "../assets/India/PHOTO-10.webp";
+import india11 from "../assets/India/PHOTO-11.webp";
+import india12 from "../assets/India/PHOTO-12.webp";
+import india13 from "../assets/India/PHOTO-13.webp";
+import india14 from "../assets/India/PHOTO-14.webp";
+import india15 from "../assets/India/PHOTO-15.webp";
+import india16 from "../assets/India/PHOTO-16.webp";
+import india17 from "../assets/India/PHOTO-17.webp";
+import india18 from "../assets/India/PHOTO-18.webp";
+import india19 from "../assets/India/PHOTO-19.webp";
+import india20 from "../assets/India/PHOTO-20.webp";
+import india21 from "../assets/India/PHOTO-21.webp";
+import india22 from "../assets/India/PHOTO-22.webp";
+import india23 from "../assets/India/PHOTO-23.webp";
+import india24 from "../assets/India/PHOTO-24.webp";
+import india25 from "../assets/India/PHOTO-25.webp";
+import india26 from "../assets/India/PHOTO-26.webp";
+import india27 from "../assets/India/PHOTO-27.webp";
+import india28 from "../assets/India/PHOTO-28.webp";
+import india29 from "../assets/India/PHOTO-29.webp";
+import india30 from "../assets/India/PHOTO-30.webp";
+import india31 from "../assets/India/foto.webp"
+import india32 from "../assets/India/foto-1.webp"
+import india33 from "../assets/India/foto-2.webp"
+import india34 from "../assets/India/foto-3.webp"
+import india35 from "../assets/India/foto-4.webp"
+import india36 from "../assets/India/foto-5.webp"
+import india37 from "../assets/India/foto-6.webp"
+import india38 from "../assets/India/foto-7.webp"
+import egypt1 from "../assets/Egypt/image (1).webp";
+import egypt2 from "../assets/Egypt/image (2).webp";
+import egypt3 from "../assets/Egypt/image (3).webp";
+import egypt4 from "../assets/Egypt/image (4).webp";
+import egypt5 from "../assets/Egypt/image (5).webp";
+import egypt6 from "../assets/Egypt/image (6).webp";
+import egypt7 from "../assets/Egypt/image (7).webp";
+import egypt8 from "../assets/Egypt/image.webp";
 
 const collections = [
   {

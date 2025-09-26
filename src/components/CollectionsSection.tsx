@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import india31 from "../assets/India/foto.png"
-import india32 from "../assets/India/foto-1.png"
-import india33 from "../assets/India/foto-2.png"
+import india31 from "../assets/India/foto.webp"
+import india32 from "../assets/India/foto-1.webp"
+import india33 from "../assets/India/foto-2.webp"
 
 
 const collections = [
