@@ -1,21 +1,24 @@
 import { useState, useEffect } from 'react';
 import heroMarble from '@/assets/hero-marble.jpg';
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
-  const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const navigate = useNavigate();
+
+  const goToCollections = () => {
+    setTimeout(() => {
+      navigate('/collections');
+    }, 0);
+  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Background with Parallax */}
       <div 
         className="absolute inset-0 z-0"
-        style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        // style={{ transform: `translateY(${scrollY * 0.5}px)` }}
       >
         <img 
           src={heroMarble} 
@@ -39,10 +42,11 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a href="/collections"><button className="btn-luxury text-lg px-10 py-5">
-              Entdecke unsere Kollektionen
-            </button>
-            </a>
+            <Link to="/collections">
+              <button className="btn-luxury text-lg px-10 py-5">
+                Entdecke unsere Kollektionen
+              </button>
+            </Link>
             {/* <button className="btn-marble text-lg px-10 py-5">
               Learn Our Story
             </button> */}

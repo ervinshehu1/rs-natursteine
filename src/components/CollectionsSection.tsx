@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import india31 from "../assets/India/foto.png"
 import india32 from "../assets/India/foto-1.png"
 import india33 from "../assets/India/foto-2.png"
@@ -85,12 +85,13 @@ const CollectionsSection = () => {
 
         {/* View All Button */}
         <div className="text-center mt-10">
+          <Link to="/collections"> 
           <button
-            onClick={() => navigate('/collections')}
             className="px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition duration-300"
           >
             Kollektionen ansehen
           </button>
+          </Link>
         </div>
       </div>
     </section>
