@@ -155,12 +155,6 @@ const collections = [
     origin: "Indien",
   },
   {
-    id: 11,
-    name: "Quarzit",
-    image: india11,
-    origin: "Indien",
-  },
-  {
     id: 12,
     name: "Quarzit",
     image: india12,

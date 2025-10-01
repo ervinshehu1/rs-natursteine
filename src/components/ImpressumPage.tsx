@@ -77,7 +77,7 @@ const ImpressumPage = () => {
               <p>Trotz sorgfältiger inhaltlicher Kontrolle übernimmt Rama Shehu Natursteine keine Haftung für die Richtigkeit, Vollständigkeit oder Aktualität der bereitgestellten Inhalte. Für den Inhalt verlinkter externer Seiten sind ausschliesslich deren Betreiber verantwortlich.</p>
 
               <h2 className="font-luxury text-2xl mt-6">Datenschutzhinweis</h2>
-              <p>Personenbezogene Daten, die über diese Website übermittelt werden (z. B. über das Kontaktformular oder per E-Mail), werden vertraulich behandelt und ausschließlich zur Bearbeitung Ihres Anliegens verwendet. Es erfolgt keine Weitergabe an Dritte ohne Ihre ausdrückliche Zustimmung.</p>
+              <p>Personenbezogene Daten, die über diese Website übermittelt werden (z. B. über das Kontaktformular oder per E-Mail), werden vertraulich behandelt und ausschliesslich zur Bearbeitung Ihres Anliegens verwendet. Es erfolgt keine Weitergabe an Dritte ohne Ihre ausdrückliche Zustimmung.</p>
 
               <h2 className="font-luxury text-2xl mt-6">Urheberrecht</h2>
               <p>Alle Inhalte dieser Website (Texte, Bilder, Design) sind urheberrechtlich geschützt. Eine Verwendung ohne ausdrückliche schriftliche Genehmigung ist nicht gestattet.</p>

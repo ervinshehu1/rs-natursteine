@@ -22,7 +22,7 @@ const AboutSection = () => {
               sich ideal für Küchenarbeitsplatten, Boden- und Wandverkleidungen,
               Treppenanlagen, Aussenbereiche und vieles mehr. Ein Container
               enthält in der Regel rund 300 m² Natursteinplatten – je nach Stein
-              und Format kann die Menge variieren. Auch kleinere oder größere
+              und Format kann die Menge variieren. Auch kleinere oder grössere
               Bestellmengen sind möglich – wir richten uns flexibel nach Ihren
               Anforderungen. 
             </p>
