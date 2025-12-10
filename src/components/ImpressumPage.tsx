@@ -64,9 +64,10 @@ const ImpressumPage = () => {
             <div className="space-y-6 font-body text-primary/80 leading-relaxed text-lg">
               <p><strong>Rama Shehu Natursteine</strong></p>
               <p><strong>Inhaberin:</strong> Rama Shehu Natursteine</p>
-              <p><strong>E-Mail:</strong> info@natursteine.ch</p>
+              <p><strong>E-Mail:</strong> info@rs-natursteine.ch</p>
               <p><strong>Verantwortlich für den Inhalt dieser Website:</strong> Ervin Shehu (ervinshehu323@gmail.com)</p>
               <p><strong>Rechtsform:</strong> Einzelfirma</p>
+              <p><strong>Handelsregistereintrag:</strong> Nr. CHE-172.084.798</p>
               <p>
                 <strong>Adresse:</strong> Die Tätigkeit erfolgt im Homeoffice.
                 Aus Datenschutzgründen wird keine physische Adresse veröffentlicht. Eine
